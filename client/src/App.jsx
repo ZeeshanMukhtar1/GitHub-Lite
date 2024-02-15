@@ -9,10 +9,9 @@ import Sidebar from './components/Sidebar';
 
 function App() {
   return (
-    <div className="flex  text-white">
-      {/* Assuming you have a Sidebar component */}
+    <div className="fle">
       <Sidebar />
-      <div className="max-w-5xl my-5 text-white  mx-auto transition-all duration-300 flex-1">
+      <div className="flex-1 max-w-5xl mx-auto my-5 text-white transition-all duration-300">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
