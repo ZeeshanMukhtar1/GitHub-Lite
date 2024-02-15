@@ -9,21 +9,7 @@ import { FaXTwitter } from 'react-icons/fa6';
 import { TfiThought } from 'react-icons/tfi';
 import { FaEye } from 'react-icons/fa';
 
-const ProfileInfo = () => {
-  const userProfile = {
-    avatar_url: 'https://avatars.githubusercontent.com/u/91063160?v=4',
-    bio: '👨🏻‍💻👨🏻‍💻👨🏻‍💻',
-    email: 'Zeeshan.Mukhtar@studentambassadors.com',
-    followers: 34,
-    following: 8,
-    html_url: 'https://github.com/ZeeshanMukhtar1',
-    location: 'BWP, Pakistan',
-    name: 'Zeeshan Mukhtar',
-    public_gists: 1,
-    public_repos: 35,
-    twitter_username: 'ZeeshanMukhtar1',
-    login: 'ZeeshanMukhtar1',
-  };
+const ProfileInfo = ({ userProfile }) => {
   return (
     <div className="flex flex-col w-full gap-2 lg:w-1/3 md:sticky md:top-10">
       <div className="p-4 rounded-lg bg-glass">
