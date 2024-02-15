@@ -9,7 +9,7 @@ import SignUpPage from './pages/SignupPage';
 
 function App() {
   return (
-    <div className="fle">
+    <div className="flex">
       <Sidebar />
       <div className="flex-1 max-w-5xl mx-auto my-5 text-white transition-all duration-300">
         <Routes>
