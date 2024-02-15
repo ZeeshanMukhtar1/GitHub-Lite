@@ -7,7 +7,6 @@ const Repos = () => {
       <ol className="relative border-gray-200 border-s">
         <Repo />
         <Repo />
-        <Repo />
       </ol>
     </div>
   );
