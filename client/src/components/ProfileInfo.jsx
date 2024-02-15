@@ -26,7 +26,7 @@ const ProfileInfo = ({ userProfile }) => {
           {/* View on Github */}
           <div className="flex flex-col items-center gap-2">
             <a
-              href={userProfile.html_url}
+              href={userProfile?.html_url}
               target="_blank"
               rel="noreferrer"
               className="flex items-center w-full gap-2 p-2 text-xs font-medium border border-blue-400 rounded-md cursor-pointer bg-glass"

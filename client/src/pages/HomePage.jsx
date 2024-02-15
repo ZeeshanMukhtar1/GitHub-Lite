@@ -15,7 +15,9 @@ const HomePage = () => {
   const getUserProfileAndRepos = useCallback(async () => {
     try {
       setLoading(true);
-      const userRes = await fetch('https://api.github.com/users/qadir0108');
+      const userRes = await fetch(
+        'https://api.github.com/users/zeeshanMukhtar1'
+      );
       const user = await userRes.json();
       setuserProfile(user);
       const repoRes = await fetch(user.repos_url);
@@ -44,9 +46,11 @@ const HomePage = () => {
       <Search />
       <SortRepos />
       <div className="flex flex-col items-start justify-center gap-4 lg:flex-row">
-        <ProfileInfo userProfile={userProfile} />
-        <Repos />
-        <Spinner />
+        {userProfile && !loading && <ProfileInfo userProfile={userProfile} />}
+        {repos.length > 0 && !loading && <Repos repos={repos} />}
+        {/* <Spinner /> */}
+
+        {loading && <Spinner />}
       </div>
     </div>
   );
