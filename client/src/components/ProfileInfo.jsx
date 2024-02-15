@@ -5,11 +5,12 @@ import {
   RiUserFollowFill,
   RiUserFollowLine,
 } from 'react-icons/ri';
+import { formatMemberSince } from '../utils/functions';
 import { FaXTwitter } from 'react-icons/fa6';
 import { TfiThought } from 'react-icons/tfi';
 import { FaEye } from 'react-icons/fa';
-
 const ProfileInfo = ({ userProfile }) => {
+  const memberSince = formatMemberSince(userProfile?.created_at);
   return (
     <div className="flex flex-col w-full gap-2 lg:w-1/3 md:sticky md:top-10">
       <div className="p-4 rounded-lg bg-glass">
@@ -68,7 +69,7 @@ const ProfileInfo = ({ userProfile }) => {
         {/* Member Since Date */}
         <div className="my-2">
           <p className="text-sm font-bold text-gray-600">Member since</p>
-          <p className="">21 Sep, 2023</p>
+          <p className="">{memberSince}</p>
         </div>
 
         {/* Email Address */}
