@@ -28,8 +28,9 @@ body {
   background: #242424;
 }
 
+/*  makiing the tailwimd css clasess reuseable */
 @layer components {
   .bg-glass {
-    @apply bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 hover:bg-gray-600/10 border border-gray-800 text-white;
+    @apply text-white border border-gray-800 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 hover:bg-gray-600/10;
   }
 }

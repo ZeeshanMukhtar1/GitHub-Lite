@@ -9,7 +9,7 @@ import Logout from './Logout';
 const Sidebar = () => {
   const authUser = false;
   return (
-    <aside className="sticky top-0 left-0 flex flex-col items-center h-screen py-8 overflow-y-auto text-white border-r border-gray-800 min-w-12 sm:w-16 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 hover:bg-gray-600/10">
+    <aside className="sticky top-0 left-0 flex flex-col items-center h-screen py-8 overflow-y-auto border-r min-w-12 sm:w-16 bg-glass">
       <nav className="flex flex-col h-full gap-3">
         <Link to="/" className="flex justify-center">
           <img className="h-8" src="/github.svg" alt="Github Logo" />
