@@ -30,6 +30,7 @@ const HomePage = () => {
 
         const repoRes = await fetch(user.repos_url);
         const repo = await repoRes.json();
+        repos.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
         console.log('API response for repositories:', repo);
 
         setRepos(repo);
@@ -59,6 +60,7 @@ const HomePage = () => {
       console.log('Received repos in onSearch:', repos);
       setuserProfile(userProfile);
       setRepos(repos);
+      setsortType('recent');
     } catch (error) {
       toast.error('The user does not exist', error.message);
     } finally {
