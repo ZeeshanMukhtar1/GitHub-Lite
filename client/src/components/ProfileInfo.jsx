@@ -12,7 +12,7 @@ import { FaEye } from 'react-icons/fa';
 const ProfileInfo = ({ userProfile }) => {
   const memberSince = formatMemberSince(userProfile?.created_at);
   return (
-    <div className="flex flex-col w-full gap-2 lg:w-1/3 md:sticky md:top-10">
+    <div className="flex flex-col w-full gap-2 lg:w-1/3 lg:sticky md:top-10">
       <div className="p-4 rounded-lg bg-glass">
         <div className="flex items-center gap-4">
           {/* User Avatar */}
