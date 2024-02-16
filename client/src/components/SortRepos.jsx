@@ -1,23 +1,30 @@
 import React from 'react';
 
-const SortRepos = () => {
+const SortRepos = ({ onSort, sortType }) => {
   return (
     <div className="flex justify-center mb-2 lg:justify-end">
       <button
         type="button"
-        className={`py-2.5 px-5 me-2 mb-2 text-xs sm:text-sm font-medium focus:outline-none rounded-lg bg-glass`}
+        onClick={() => onSort('recent')}
+        className={`py-2.5 px-5 me-2 mb-2 text-xs sm:text-sm font-medium focus:outline-none rounded-lg bg-glass  
+        ${sortType === 'recent' ? 'border-blue-500' : ''}
+        `}
       >
         Most Recent
       </button>
       <button
         type="button"
-        className={`py-2.5 px-5 me-2 mb-2  text-xs sm:text-sm font-medium focus:outline-none rounded-lg bg-glass`}
+        onClick={() => onSort('stars')}
+        className={`py-2.5 px-5 me-2 mb-2  text-xs sm:text-sm font-medium focus:outline-none rounded-lg bg-glass
+        ${sortType === 'stars' ? 'border-blue-500' : ''}`}
       >
         Most Stars
       </button>
       <button
         type="button"
-        className={`py-2.5 px-5 me-2 mb-2  text-xs sm:text-sm font-medium focus:outline-none rounded-lg bg-glass`}
+        onClick={() => onSort('forks')}
+        className={`py-2.5 px-5 me-2 mb-2  text-xs sm:text-sm font-medium focus:outline-none rounded-lg bg-glass
+        ${sortType === 'forks' ? 'border-blue-500' : ''}`}
       >
         Most Forks
       </button>
