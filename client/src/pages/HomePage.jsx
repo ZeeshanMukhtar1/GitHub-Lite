@@ -12,44 +12,59 @@ const HomePage = () => {
   const [loading, setLoading] = useState(false);
   const [sortType, setsortType] = useState('recent');
 
-  const getUserProfileAndRepos = useCallback(async () => {
+  const getUserProfileAndRepos = useCallback(
+    async ({ username = 'zeeshanMukhtar1' } = {}) => {
+      try {
+        setLoading(true);
+        const userRes = await fetch(`https://api.github.com/users/${username}`);
+        const user = await userRes.json();
+        setuserProfile(user);
+
+        const repoRes = await fetch(user.repos_url);
+        const repo = await repoRes.json();
+        console.log('API response for repositories:', repo);
+
+        setRepos(repo);
+        return { userProfile: user, repos: repo };
+      } catch (error) {
+        console.error(error);
+        toast.error('User does not exist', error.message);
+      } finally {
+        setLoading(false);
+      }
+    },
+    []
+  );
+
+  useEffect(() => {
+    getUserProfileAndRepos();
+  }, []);
+
+  const onSearch = async (e, username) => {
+    e.preventDefault();
+    setLoading(true);
+    setRepos([]);
+    setuserProfile(null);
+
     try {
-      setLoading(true);
-      const userRes = await fetch(
-        'https://api.github.com/users/zeeshanMukhtar1'
-      );
-      const user = await userRes.json();
-      setuserProfile(user);
-      const repoRes = await fetch(user.repos_url);
-      const repo = await repoRes.json();
-      setRepos(repo);
-      console.log('userprofile is', user);
-      console.log('repos are', repo);
+      const { userProfile, repos } = await getUserProfileAndRepos({ username });
+      console.log('Received repos in onSearch:', repos);
+      setuserProfile(userProfile);
+      setRepos(repos);
     } catch (error) {
-      console.error(error);
-      toast.error('Failed to fetch user profile and repos', error.message);
+      toast.error('The user does not exist', error.message);
     } finally {
       setLoading(false);
     }
-  }, []); // Removed the extra parenthesis
-
-  useEffect(() => {
-    getUserProfileAndRepos();
-  }, []);
-
-  useEffect(() => {
-    getUserProfileAndRepos();
-  }, []);
+  };
 
   return (
     <div className="m-4">
-      <Search />
+      <Search onSearch={onSearch} />
       <SortRepos />
       <div className="flex flex-col items-start justify-center gap-4 lg:flex-row">
         {userProfile && !loading && <ProfileInfo userProfile={userProfile} />}
-        {repos.length > 0 && !loading && <Repos repos={repos} />}
-        {/* <Spinner /> */}
-
+        {!loading && repos.length > 0 && <Repos repos={repos} />}
         {loading && <Spinner />}
       </div>
     </div>

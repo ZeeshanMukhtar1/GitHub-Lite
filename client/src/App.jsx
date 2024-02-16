@@ -22,7 +22,6 @@ function App() {
           <Route path="/Sidebar" element={<Sidebar />} />
         </Routes>
         <Toaster />
-        <footer>Footer</footer>
       </div>
     </div>
   );
