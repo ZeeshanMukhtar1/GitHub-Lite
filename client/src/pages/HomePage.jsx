@@ -16,7 +16,15 @@ const HomePage = () => {
     async ({ username = 'zeeshanMukhtar1' } = {}) => {
       try {
         setLoading(true);
-        const userRes = await fetch(`https://api.github.com/users/${username}`);
+        const userRes = await fetch(
+          `https://api.github.com/users/${username}`,
+          {
+            headers: {
+              authorization: `token ${import.meta.env.VITE_GITHUB_API_KEY}`,
+            },
+          }
+        );
+
         const user = await userRes.json();
         setuserProfile(user);
 
