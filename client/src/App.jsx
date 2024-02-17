@@ -7,8 +7,11 @@ import LikesPage from './pages/LikesPage';
 import Sidebar from './components/Sidebar';
 import SignUpPage from './pages/SignupPage';
 import { Toaster } from 'react-hot-toast';
+import { useAuthContext } from '../context/AuthContext';
 
 function App() {
+  const { authUser } = useAuthContext();
+  console.log('authUser', authUser);
   return (
     <div className="flex">
       <Sidebar />

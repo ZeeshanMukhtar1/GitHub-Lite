@@ -23,7 +23,7 @@ const HomePage = () => {
         repos.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
         setRepos(repos);
         setuserProfile(userProfile);
-        return { userProfile: user, repos: repo };
+        return { userProfile, repos };
       } catch (error) {
         console.error(error);
         toast.error('User does not exist', error.message);
