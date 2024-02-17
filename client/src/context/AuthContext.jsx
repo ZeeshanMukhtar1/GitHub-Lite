@@ -10,10 +10,11 @@ export const useAuthContext = () => {
 
 export const AuthContextProvider = ({ children }) => {
   const [authUser, setAuthUser] = useState(null);
-  // const [loading , setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const checkUserLoggedIn = async () => {
+      setLoading(true);
       try {
         const res = await fetch('/api/auth/check', { credentials: 'include' });
         const data = await res.json();
@@ -21,6 +22,8 @@ export const AuthContextProvider = ({ children }) => {
       } catch (error) {
         console.log(error);
         toast.error('An error occurred', error.message);
+      } finally {
+        setLoading(false);
       }
     };
     checkUserLoggedIn();
@@ -30,6 +33,7 @@ export const AuthContextProvider = ({ children }) => {
       value={{
         authUser,
         setAuthUser,
+        loading,
       }}
     >
       {children}
