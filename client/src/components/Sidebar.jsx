@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 import { IoHomeSharp } from 'react-icons/io5';
-import { FaHeart } from 'react-icons/fa';
-import { MdOutlineExplore } from 'react-icons/md';
-import { PiSignInBold } from 'react-icons/pi';
-import { MdEditDocument } from 'react-icons/md';
+import { TfiWrite } from 'react-icons/tfi';
+import { RiHeartAddFill } from 'react-icons/ri';
+
 import Logout from './Logout';
 import { useAuthContext } from '../context/AuthContext';
+import { RiLoginCircleFill } from 'react-icons/ri';
+import { GoTelescopeFill } from 'react-icons/go';
 
 const Sidebar = () => {
   const { authUser } = useAuthContext();
@@ -30,7 +31,7 @@ const Sidebar = () => {
             to="/likes"
             className="p-1.5 flex justify-center transition-colors duration-200 rounded-lg hover:bg-gray-800"
           >
-            <FaHeart size={22} />
+            <RiHeartAddFill size={22} />
           </Link>
         )}
 
@@ -39,7 +40,7 @@ const Sidebar = () => {
             to="/explore"
             className="p-1.5  flex justify-center transition-colors duration-200 rounded-lg hover:bg-gray-800"
           >
-            <MdOutlineExplore size={25} />
+            <GoTelescopeFill size={25} />
           </Link>
         )}
 
@@ -48,7 +49,7 @@ const Sidebar = () => {
             to="/login"
             className="p-1.5 focus:outline-nones transition-colors duration-200 rounded-lg hover:bg-gray-800"
           >
-            <PiSignInBold size={25} />
+            <RiLoginCircleFill size={25} />
           </Link>
         )}
 
@@ -57,7 +58,7 @@ const Sidebar = () => {
             to="/signup"
             className="p-1.5 focus:outline-nones transition-colors duration-200 rounded-lg hover:bg-gray-800"
           >
-            <MdEditDocument size={25} />
+            <TfiWrite size={25} />
           </Link>
         )}
         {authUser && (

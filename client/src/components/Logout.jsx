@@ -1,6 +1,6 @@
-import { MdLogout } from 'react-icons/md';
 import { useAuthContext } from '../context/AuthContext';
 import { Toaster } from 'react-hot-toast';
+import { IoMdLogOut } from 'react-icons/io';
 
 const Logout = () => {
   const { authUser, setAuthUser } = useAuthContext();
@@ -9,10 +9,8 @@ const Logout = () => {
       const res = await fetch('/api/auth/logout', { credentials: 'include' });
       const data = await res.json();
       setAuthUser(null);
-      console.log(data);
     } catch (error) {
-      console.log(error);
-      Toaster.error('An error occurred', error.message);
+      Toaster.error(error.message);
     }
   };
   return (
@@ -30,7 +28,7 @@ const Logout = () => {
         className="flex items-center p-2 mt-auto border border-gray-800 rounded-lg cursor-pointer bg-glass"
         onClick={handleLogout}
       >
-        <MdLogout size={22} />
+        <IoMdLogOut size={22} />
       </div>
     </>
   );

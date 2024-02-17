@@ -21,7 +21,7 @@ const SignUpPage = () => {
             Sign up with Github
           </button>
           <p className="text-gray-300">
-            By signing up, you will unlock all the features of the app.
+            Sign up and enjoy all the features in the palm of your hand.
             <span>
               <FaUnlockAlt className="inline w-4 h-4 mx-2" />
             </span>

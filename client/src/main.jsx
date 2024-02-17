@@ -7,8 +7,6 @@ import { AuthContextProvider } from './context/AuthContext.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* functionality Wraping the App component with the BrowserRouter to get the
-    routing functionality */}
     <BrowserRouter>
       <AuthContextProvider>
         <App />

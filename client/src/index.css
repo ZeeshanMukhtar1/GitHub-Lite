@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 body {
-  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)), url("/bg.png");
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)), url("/bgImg.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 
-/* using dark mode like scrollbar */
+/* dark mode like scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -28,7 +28,7 @@ body {
   background: #242424;
 }
 
-/*  makiing the tailwimd css clasess reuseable */
+/*  this is how we make tailwind classes reuseable */
 @layer components {
   .bg-glass {
     @apply text-white border border-gray-800 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 hover:bg-gray-600/10;

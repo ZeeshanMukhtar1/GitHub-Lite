@@ -1,4 +1,3 @@
-import './App.css';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
@@ -25,7 +24,9 @@ function App() {
           />
           <Route
             path="/signup"
-            element={!authUser ? <LoginPage /> : <Navigate to={'/'} />}
+            element={
+              !authUser ? <LoginPage /> : <Navigate to={<SignUpPage />} />
+            }
           />
           <Route
             path="/explore"
@@ -37,7 +38,7 @@ function App() {
           />
           <Route path="/Sidebar" element={<Sidebar />} />
         </Routes>
-        <Toaster />
+        <Toaster position="top-center" />
       </div>
     </div>
   );

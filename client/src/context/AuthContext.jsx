@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from 'react';
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 import { useContext } from 'react';
 
 export const AuthContext = createContext();
@@ -21,7 +21,7 @@ export const AuthContextProvider = ({ children }) => {
         setAuthUser(data.user);
       } catch (error) {
         console.log(error);
-        toast.error('An error occurred', error.message);
+        toast.error(error.message);
       } finally {
         setLoading(false);
       }

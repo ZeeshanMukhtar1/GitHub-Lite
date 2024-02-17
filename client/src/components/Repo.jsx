@@ -1,8 +1,8 @@
 import React from 'react';
 import { FaCodeBranch, FaCopy, FaRegStar } from 'react-icons/fa';
 import { FaCodeFork } from 'react-icons/fa6';
-import { formatDate } from '../utils/functions';
-import { PROGRAMMING_LANGUAGES } from '../utils/constants';
+import { formatDate } from '../helpers/functions';
+import { PROGRAMMING_LANGUAGES } from '../helpers/constants';
 import toast from 'react-hot-toast';
 
 const Repo = ({ repo }) => {
@@ -12,7 +12,7 @@ const Repo = ({ repo }) => {
       await navigator.clipboard.writeText(repo.clone_url);
       toast.success('Repo URL copied to clipboard');
     } catch (error) {
-      toast.error('Failed to copy repo URL to clipboard', error.message);
+      toast.error('Oops! failed to copy repo URL to clipboard', error.message);
     }
   };
 

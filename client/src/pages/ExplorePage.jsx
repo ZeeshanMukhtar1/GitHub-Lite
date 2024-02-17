@@ -16,7 +16,7 @@ const ExplorePage = () => {
       setRepos(repos);
       setSelectedLanguage(language);
     } catch (error) {
-      console.error('Failed to fetch repositories', error);
+      console.error('Failed to fetch repositories', error.message);
       toast.error('Failed to fetch repositories');
       a;
     } finally {

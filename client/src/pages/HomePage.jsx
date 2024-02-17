@@ -4,7 +4,7 @@ import Search from '../components/Search';
 import SortRepos from '../components/SortRepos';
 import Spinner from '../components/Spinner';
 import { useCallback, useEffect, useState } from 'react';
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 const HomePage = () => {
   const [userProfile, setuserProfile] = useState(null);
@@ -13,7 +13,7 @@ const HomePage = () => {
   const [sortType, setsortType] = useState('recent');
 
   const getUserProfileAndRepos = useCallback(
-    async ({ username = 'zeeshanMukhtar1' } = {}) => {
+    async ({ username = 'ashtom' } = {}) => {
       setLoading(true);
       try {
         const res = await fetch(`/api/users/profile/${username}`);

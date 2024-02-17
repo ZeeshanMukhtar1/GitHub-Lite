@@ -1,7 +1,7 @@
 import { FaHeart } from 'react-icons/fa';
 import toast from 'react-hot-toast';
 import { useEffect, useState } from 'react';
-import { formatDate } from '../utils/functions';
+import { formatDate } from '../helpers/functions';
 
 // ... (other imports)
 
@@ -22,8 +22,6 @@ const LikesPage = () => {
     };
     getLikes();
   }, []);
-
-  console.log('likes:', likes);
 
   return (
     <div className="relative px-4 overflow-x-auto rounded-lg shadow-md">
