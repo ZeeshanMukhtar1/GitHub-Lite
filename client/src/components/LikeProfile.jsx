@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaHeartCircleCheck } from 'react-icons/fa6';
-import { toast } from 'react-hot-toast';
 import { useAuthContext } from '../context/AuthContext';
+import toast from 'react-hot-toast';
 
 const LikeProfile = ({ userProfile }) => {
   const { authUser } = useAuthContext();
@@ -13,12 +13,18 @@ const LikeProfile = ({ userProfile }) => {
         method: 'POST',
         credentials: 'include',
       });
+
+      if (res.status === 404) {
+        throw new Error('target user is not a member of this app');
+        toast.error('User is not a member of this app');
+      }
+
       const data = await res.json();
       if (data.error) throw new Error(data.error);
 
-      Toaster.success('Profile liked successfully');
+      toast.success(data.message);
     } catch (error) {
-      console.error(error.message);
+      console.error('Error:', error.message);
       toast.error('An error occurred', error.message);
     }
   };

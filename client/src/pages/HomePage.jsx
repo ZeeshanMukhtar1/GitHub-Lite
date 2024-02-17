@@ -46,7 +46,6 @@ const HomePage = () => {
 
     try {
       const { userProfile, repos } = await getUserProfileAndRepos({ username });
-      console.log('Received repos in onSearch:', repos);
       setuserProfile(userProfile);
       setRepos(repos);
       setsortType('recent');

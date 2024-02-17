@@ -32,23 +32,19 @@ export const LikeProfile = async (req, res) => {
     const userToLike = await User.findOne({ username });
 
     if (!userToLike) {
-      return res.status(404).json({ error: 'User not found' });
-    }
-
-    if (userToLike._id.toString() === user._id.toString()) {
       return res
-        .status(400)
-        .json({ error: 'You cannot like your own profile' });
+        .status(404)
+        .json({ error: 'User is not a member of this app' });
     }
 
     if (user.likedProfiles.includes(userToLike.username)) {
       return res
         .status(400)
-        .json({ error: 'You have already liked this profile' });
+        .json({ info: 'You have already liked this profile' });
     }
 
     userToLike.likedBy.push({
-      username: user,
+      username: user.username,
       avatarUrl: user.avatarUrl,
       likedDate: Date.now(),
     });

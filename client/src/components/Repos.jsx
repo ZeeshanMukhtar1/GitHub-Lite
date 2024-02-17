@@ -2,7 +2,6 @@ import React from 'react';
 import Repo from './Repo';
 
 const Repos = ({ repos, alwaysFullScreen = false }) => {
-  console.log('Received repos in Repos component:', repos);
   const className = alwaysFullScreen ? 'w-full' : 'lg:w-2/3 w-full';
 
   return (

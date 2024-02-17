@@ -10,6 +10,6 @@ const router = express.Router();
 
 router.get('/profile/:username', getUserProfileAndRepos);
 router.post('/like/:username', ensureAuthenticated, LikeProfile);
-router.post('/likes', ensureAuthenticated, getLikes);
+router.get('/likes', ensureAuthenticated, getLikes);
 
 export default router;
