@@ -1,5 +1,6 @@
 import React from 'react';
 import { IoLocationOutline } from 'react-icons/io5';
+import LikeProfile from './LikeProfile';
 import {
   RiGitRepositoryFill,
   RiUserFollowFill,
@@ -25,6 +26,7 @@ const ProfileInfo = ({ userProfile }) => {
           </a>
           {/* View on Github */}
           <div className="flex flex-col items-center gap-2">
+            <LikeProfile userProfile={userProfile} />
             <a
               href={userProfile?.html_url}
               target="_blank"
