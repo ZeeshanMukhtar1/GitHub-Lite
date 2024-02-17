@@ -5,9 +5,11 @@ import { MdOutlineExplore } from 'react-icons/md';
 import { PiSignInBold } from 'react-icons/pi';
 import { MdEditDocument } from 'react-icons/md';
 import Logout from './Logout';
+import { useAuthContext } from '../context/AuthContext';
 
 const Sidebar = () => {
-  const authUser = false;
+  const { authUser } = useAuthContext();
+
   return (
     <aside className="sticky top-0 left-0 flex flex-col items-center h-screen py-8 overflow-y-auto border-r min-w-12 sm:w-16 bg-glass">
       <nav className="flex flex-col h-full gap-3">
