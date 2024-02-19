@@ -41,6 +41,12 @@ GitHub Lite is a simplified web application that allows users to explore GitHub 
 - **Explore Page:**
   Discover popular repositories from multiple users.
 
+  ## Screenshots 📸
+
+![home preview](./client/public/home.png)
+![explore preview](./client/public/explore.png)
+![login preview](./client/public/login.png)
+
 ## Getting Started 👋
 
 1. Clone the repository:
@@ -80,15 +86,11 @@ To access the Explore Page and Like History features, authentication via GitHub 
 
 ## Contributing 🤝
 
-Contributions are welcome! If you find any issues or have suggestions for improvements, please [raise an issue](https://github.com/ZeeshanMukhtar1/GitHub-Lite/issues) or submit a pull request.
+Contributions are welcome! If you find any issues or have suggestions for improvements, please [raise an issue](https://github.com/ZeeshanMukhtar1/GitHub-Lite/issues) or submit a [pull request](https://github.com/ZeeshanMukhtar1/GitHub-Lite/pulls). We welcome all contributions that help us improve the application. Please follow the [Contribution Guidelines](CONTRIBUTING.md) before making a contribution.
 
 ## Open Source License 📜
 
 GitHub Lite is an open-source project. Feel free to contribute, fork, or use the code as per the terms of the [MIT License](LICENSE). Your contributions are valuable and appreciated.
-
-## Issues and Pull Requests 🤖
-
-If you encounter any issues or have improvements to suggest, please [raise an issue](https://github.com/ZeeshanMukhtar1/GitHub-Lite/issues) or submit a [pull request](https://github.com/ZeeshanMukhtar1/GitHub-Lite/pulls). We welcome your input! 🚀
 
 ## Contributors 🌟
 
