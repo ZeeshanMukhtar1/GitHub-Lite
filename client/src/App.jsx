@@ -24,9 +24,7 @@ function App() {
           />
           <Route
             path="/signup"
-            element={
-              !authUser ? <LoginPage /> : <Navigate to={<SignUpPage />} />
-            }
+            element={!authUser ? <SignUpPage /> : <Navigate to={'/'} />}
           />
           <Route
             path="/explore"
