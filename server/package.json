@@ -2,7 +2,7 @@
   "name": "github-lite",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "dev": "nodemon server/server.js"

@@ -17,14 +17,24 @@ const HomePage = () => {
       setLoading(true);
       try {
         const res = await fetch(`/api/users/profile/${username}`);
+        if (!res.ok) {
+          // If the response is not OK, throw an error with the error message
+          throw new Error(`User does not exist: ${res.statusText}`);
+        }
+
         const { userProfile, repos } = await res.json();
         repos.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
         setRepos(repos);
         setuserProfile(userProfile);
         return { userProfile, repos };
       } catch (error) {
-        console.error(error);
-        toast.error('User does not exist', error.message);
+        // Checking if the error message already contains "User does not exist"
+        if (!error.message.includes('User does not exist')) {
+          toast.error(
+            "Oh no! The user you're looking for vanished",
+            error.message
+          );
+        }
       } finally {
         setLoading(false);
       }
