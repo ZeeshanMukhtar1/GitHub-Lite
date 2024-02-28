@@ -11,7 +11,6 @@ export const explorePopularRepos = async (req, res) => {
     );
     const data = await response.json();
 
-    console.log('Fetched Repositories:', data.items);
 
     res.status(200).json({ repos: data.items });
   } catch (error) {
