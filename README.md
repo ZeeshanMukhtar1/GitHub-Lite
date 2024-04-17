@@ -46,6 +46,7 @@ GitHub Lite is a simplified web application that allows users to explore GitHub 
 ![home preview](./client/public/home.png)
 ![explore preview](./client/public/explore.png)
 ![login preview](./client/public/login.png)
+![Not found page](./client/public/404.png)
 
 ## Getting Started 👋
 

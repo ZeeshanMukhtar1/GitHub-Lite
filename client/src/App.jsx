@@ -7,6 +7,7 @@ import Sidebar from './components/Sidebar';
 import SignUpPage from './pages/SignupPage';
 import { Toaster } from 'react-hot-toast';
 import { useAuthContext } from './context/AuthContext';
+import NotFoundPage from './components/NotFoundPage';
 
 function App() {
   const { authUser, loading } = useAuthContext();
@@ -35,6 +36,8 @@ function App() {
             element={authUser ? <LikesPage /> : <Navigate to={'/login'} />}
           />
           <Route path="/Sidebar" element={<Sidebar />} />
+          {/* for any other route, show the NotFoundPage component */}
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <Toaster position="top-center" />
       </div>
