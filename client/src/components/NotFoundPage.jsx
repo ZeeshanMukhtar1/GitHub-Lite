@@ -9,6 +9,7 @@ const NotFoundPage = () => {
         src="https://assets-global.website-files.com/5e0a5d9d743608d0f3ea6753/65819264a7a62c9422e9df54_Vectors-Wrapper.svg"
         alt="404 Not Found"
       />
+      {/* <img className="mb-8" src="/Not_Found.svg" alt="404 Not Found" /> */}
       <h1 className="mb-2 text-4xl font-bold">Why are you here?</h1>
       <h4 className="mb-6 text-lg text-gray-600">
         You’re not supposed to be here.
