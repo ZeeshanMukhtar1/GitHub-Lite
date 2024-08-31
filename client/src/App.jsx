@@ -8,6 +8,7 @@ import SignUpPage from './pages/SignupPage';
 import { Toaster } from 'react-hot-toast';
 import { useAuthContext } from './context/AuthContext';
 import NotFoundPage from './components/NotFoundPage';
+import LandingPage from './pages/LandingPage';
 
 function App() {
   const { authUser, loading } = useAuthContext();
@@ -18,7 +19,8 @@ function App() {
       <Sidebar />
       <div className="flex-1 max-w-5xl mx-auto my-5 text-white transition-all duration-300">
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/Home" element={<HomePage />} />
           <Route
             path="/login"
             element={!authUser ? <LoginPage /> : <Navigate to={'/'} />}
