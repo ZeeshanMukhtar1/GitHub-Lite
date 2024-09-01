@@ -8,7 +8,9 @@ GitHub Lite is a simplified web application that allows users to explore GitHub 
 
 - React
 - React Router
+- Magic UI
 - React Icons
+- Lucide React
 - React Hot Toast
 - Vite (Build tool for React)
 - Tailwind CSS (Styling)
